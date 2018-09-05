@@ -6,9 +6,20 @@
 // not use a regular expressions in our code but instead use array and string manipulation and methods
 // ignore any punctuation characters
 
-
 function isPalindrome(string) {
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+  let lower = string.toLowerCase();
+  let str = '';
 
+  for(let i = 0; i < lower.length; i++) {
+    if(alphabet.indexOf(lower[i]) >= 0) str += lower[i]
+  }
+
+  for(let i = 0; i < Math.floor(str.length/2); i++) {
+    if(str[i] !== str[str.length - i - 1]) return false;
+  }
+
+  return true;
 }
 
 isPalindrome("Madam, I'm Adam");
