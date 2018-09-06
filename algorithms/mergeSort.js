@@ -97,6 +97,27 @@
 
 
 
-var mergeSort = function(array) {
-  // Your code here.
-};
+ function merge(array1, array2) {
+   let newArr = [];
+
+   while(array1.length && array2.length) {
+     let minElem;
+     if(array1[0] < array2[0]) minElem = array1.shift();
+     else minElem = array2.shift();
+     newArr.push(minElem);
+   }
+
+   if(array1.length) return newArr.concat(array1)
+   else return newArr.concat(array2)
+ }
+
+ function mergeSort(array) {
+   if(array.length < 2) return array;
+   let middle = Math.floor(array.length / 2);
+   let firstHalf = array.slice(0, middle);
+   let secondHalf = array.slice(middle);
+
+   return merge(mergeSort(firstHalf), mergeSort(secondHalf));
+ };
+
+ mergeSort([6000, 34, 203, 3, 746, 200, 984, 198, 764, 9, 1]);
