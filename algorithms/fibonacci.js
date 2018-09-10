@@ -11,3 +11,16 @@ function fibonacci(position) {
 
 fibonacci(4); // returns 3
 fibonacci(9); // returns 34
+
+// function fibonacci(num){
+//   var a = 1, b = 0, temp;
+//
+//   while (num >= 0){
+//     temp = a;
+//     a = a + b;
+//     b = temp;
+//     num--;
+//   }
+//
+//   return b;
+// }
